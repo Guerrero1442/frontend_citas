@@ -1,0 +1,23 @@
+<div
+  class="p-6 bg-white rounded-lg shadow-md flex flex-col justify-between h-full w-full"
+>
+  <div>
+    <div class="flex items-center mb-4">
+      <h2 class="text-lg font-semibold ml-4">{{ cita.especialidad }}</h2>
+    </div>
+    <p class="text-gray-600 mb-2">
+      Fecha de la cita: {{ cita.fecha | date : "short" }}
+    </p>
+    <p class="text-gray-600 mb-4">
+      Médico asignado: {{ cita.medico.nombreCompleto }}
+    </p>
+  </div>
+  <div class="space-x-3">
+    <a class="text-blue-500 hover:underline">Ver detalles</a>
+    <a
+      class="text-red-500 hover:underline cursor-pointer"
+      (click)="deleteCita()"
+      >Eliminar</a
+    >
+  </div>
+</div>

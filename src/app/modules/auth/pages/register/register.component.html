@@ -1,1 +1,117 @@
-<p>register works!</p>
+<div
+  class="w-full min-h-screen bg-gray-50 flex flex-col sm:justify-center items-center pt-6 sm:pt-0"
+>
+  <h2 class="mb-12 text-center text-5xl font-extrabold">Register</h2>
+  <form>
+    <div class="grid gap-6 mb-6 lg:grid-cols-2">
+      <div>
+        <label
+          for="first_name"
+          class="block mb-1 text-sm font-medium text-gray-900 dark:text-gray-600"
+          >Nombres</label
+        >
+        <input
+          id="first_name"
+          type="text"
+          name="first_name"
+          class="py-2 px-3 border border-gray-300 focus:border-red-300 focus:outline-none focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md shadow-sm disabled:bg-gray-100 mt-1 block w-full"
+          placeholder="John"
+          required
+        />
+      </div>
+      <div>
+        <label
+          for="last_name"
+          class="block mb-1 text-sm font-medium text-gray-900 dark:text-gray-600"
+          >Apellidos</label
+        >
+        <input
+          id="last_name"
+          type="text"
+          name="last_name"
+          class="py-2 px-3 border border-gray-300 focus:border-red-300 focus:outline-none focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md shadow-sm disabled:bg-gray-100 mt-1 block w-full"
+          placeholder="Doe"
+          required
+        />
+      </div>
+      <div>
+        <label
+          for="documento"
+          class="block mb-1 text-sm font-medium text-gray-900 dark:text-gray-600"
+          >Documento</label
+        >
+        <input
+          id="documento"
+          type="text"
+          name="documento"
+          class="py-2 px-3 border border-gray-300 focus:border-red-300 focus:outline-none focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md shadow-sm disabled:bg-gray-100 mt-1 block w-full"
+          placeholder="1000421231"
+          required
+        />
+      </div>
+      <div>
+        <label
+          for="telefono"
+          class="block mb-1 text-sm font-medium text-gray-900 dark:text-gray-600"
+          >Telefono</label
+        >
+        <input
+          id="telefono"
+          type="number"
+          name="telefono"
+          class="py-2 px-3 border border-gray-300 focus:border-red-300 focus:outline-none focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md shadow-sm disabled:bg-gray-100 mt-1 block w-full"
+          placeholder="31784803715"
+          required
+        />
+      </div>
+    </div>
+    <div class="mb-6">
+      <label
+        for="email"
+        class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-600"
+        >Email address</label
+      >
+      <input
+        type="email"
+        id="email"
+        class="py-2 px-3 border border-gray-300 focus:border-red-300 focus:outline-none focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md shadow-sm disabled:bg-gray-100 mt-1 block w-full"
+        placeholder="john.doe@company.com"
+        required
+      />
+    </div>
+    <div class="mb-6">
+      <label
+        for="password"
+        class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-600"
+        >Password</label
+      >
+      <input
+        type="password"
+        id="password"
+        class="py-2 px-3 border border-gray-300 focus:border-red-300 focus:outline-none focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md shadow-sm disabled:bg-gray-100 mt-1 block w-full"
+        placeholder="•••••••••"
+        required
+      />
+    </div>
+    <div class="mb-6">
+      <label
+        for="confirm_password"
+        class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-600"
+        >Confirm password</label
+      >
+      <input
+        type="password"
+        id="confirm_password"
+        class="py-2 px-3 border border-gray-300 focus:border-red-300 focus:outline-none focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md shadow-sm disabled:bg-gray-100 mt-1 block w-full"
+        placeholder="•••••••••"
+        required
+      />
+    </div>
+    <button
+      type="submit"
+      class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+    >
+      Registrarse
+    </button>
+  </form>
+</div>

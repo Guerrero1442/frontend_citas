@@ -1,0 +1,21 @@
+<div class="flex flex-col justify-center items-center">
+  <div class="flex justify-center items-center w-full mb-6 space-x-6">
+    <h1 class="text-3xl font-semibold">Citas médicas</h1>
+    <button
+      routerLink="/app/cita/nueva"
+      class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+    >
+      <fa-icon [icon]="faPlus" class="text-white text-xl"></fa-icon>
+      Nueva cita
+    </button>
+  </div>
+  <div
+    class="items-stretch grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-4 w-3/4"
+  >
+    <app-tarjeta-cita
+      *ngFor="let cita of citas"
+      [cita]="cita"
+      (citaDelete)="cargarCitas()"
+    ></app-tarjeta-cita>
+  </div>
+</div>
