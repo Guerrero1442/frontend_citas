@@ -7,6 +7,7 @@ import { TarjetaCitaComponent } from './components/tarjeta-cita/tarjeta-cita.com
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CitaNuevaComponent } from './pages/cita-nueva/cita-nueva.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CitaEditarComponent } from './pages/cita-editar/cita-editar.component';
 
 
 
@@ -14,7 +15,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   declarations: [
     CitaComponent,
     TarjetaCitaComponent,
-    CitaNuevaComponent
+    CitaNuevaComponent,
+    CitaEditarComponent
   ],
   imports: [
     CommonModule,

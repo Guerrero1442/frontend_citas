@@ -2,13 +2,21 @@
   <div class="flex items-center">
     <img
       routerLink="/app/menu"
-      src="assets\img\logo.png"
+      src="assets/img/logo.png"
       alt="Brand"
       class="h-10 w-auto cursor-pointer"
     />
   </div>
   <div class="flex items-center space-x-2">
-    <span class="text-black font-semibold ml-2"> </span>
+    <span *ngIf="user != null" class="text-black font-semibold ml-2">
+      {{ user.nombreCompleto }}
+    </span>
     <fa-icon [icon]="faUserCircle" class="text-black text-xl"></fa-icon>
+    <button
+      (click)="logout()"
+      class="bg-gray-300 text-white font-semibold px-4 py-2 rounded-md hover:bg-gray-500 focus:outline-none focus:bg-gray-500"
+    >
+      Logout
+    </button>
   </div>
 </nav>

@@ -1,0 +1,80 @@
+<div class="container mx-auto mt-5">
+  <h1 class="text-4xl mb-5">Editar Cita</h1>
+  <form [formGroup]="form" novalidate (ngSubmit)="editarCita()">
+    <div class="mb-4">
+      <label class="block text-gray-700 text-sm font-bold mb-2" for="fecha">
+        Fecha
+      </label>
+      <input
+        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        id="fecha"
+        type="date"
+        formControlName="fecha"
+        placeholder="Fecha"
+      />
+    </div>
+    <div class="mb-4">
+      <label
+        class="block text-gray-700 text-sm font-bold mb-2"
+        for="especialidad"
+      >
+        Especialidad
+      </label>
+      <input
+        formControlName="especialidad"
+        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        id="especialidad"
+      />
+
+      <!-- <select
+        formControlName="especialidad"
+        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        id="especialidad"
+        [disabled]="true"
+      >
+        <option value="" disabled selected>Seleccione una especialidad</option>
+        <option value="Cardiologia">Cardiologia</option>
+        <option value="Dermatologia">Dermatologia</option>
+        <option value="Gastroenterologia">Gastroenterologia</option>
+        <option value="Ginecologia">Ginecologia</option>
+        <option value="Neurologia">Neurologia</option>
+        <option value="Oftalmologia">Oftalmologia</option>
+        <option value="Oncologia">Oncologia</option>
+        <option value="Pediatria">Pediatria</option>
+        <option value="Psicologia">Psicologia</option>
+        <option value="Reumatologia">Reumatologia</option>
+        <option value="Urologia">Urologia</option>
+      </select> -->
+    </div>
+    <div class="mb-4">
+      <label class="block text-gray-700 text-sm font-bold mb-2" for="medicoId">
+        Médico
+      </label>
+      <select
+        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        id="medico"
+        formControlName="medico"
+      >
+        <option *ngFor="let medico of medicos" [value]="medico.id">
+          {{ medico.nombreCompleto }}
+        </option>
+      </select>
+    </div>
+
+    <div class="flex items-center space-x-4">
+      <button
+        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+        type="submit"
+      >
+        Actualizar
+      </button>
+      <button
+        class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+        routerLink="/app/cita"
+        type="button"
+      >
+        Cancelar
+      </button>
+    </div>
+  </form>
+</div>

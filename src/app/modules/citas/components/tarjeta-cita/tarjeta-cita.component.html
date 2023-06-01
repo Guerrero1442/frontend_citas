@@ -13,7 +13,11 @@
     </p>
   </div>
   <div class="space-x-3">
-    <a class="text-blue-500 hover:underline">Ver detalles</a>
+    <a
+      [routerLink]="['/app/cita/editar', cita.id]"
+      class="text-blue-500 hover:underline"
+      >Editar</a
+    >
     <a
       class="text-red-500 hover:underline cursor-pointer"
       (click)="deleteCita()"

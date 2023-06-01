@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { Cita } from 'src/app/models/cita.model';
+import { Medico } from 'src/app/models/medico.model';
+import { Paciente } from 'src/app/models/paciente.model';
 import { AuthService } from 'src/app/services/auth.service';
 import { CitaService } from 'src/app/services/citas.service';
 
@@ -11,20 +13,30 @@ import { CitaService } from 'src/app/services/citas.service';
 })
 export class CitaComponent {
   faPlus = faPlus;
-  citas: Cita[];
+  citas: Cita[] = [];
   id:number | null = null;
-  pacienteId:number = 1
+  citasCargadas = false;
+  user:Medico | Paciente;
 
   constructor(private citaService:CitaService,private route: ActivatedRoute, private authService: AuthService){
   }
 
   ngOnInit(): void {
-    this.cargarCitas()
+    this.authService.getProfile().subscribe({
+      next: (res) => {
+        this.user = res;
+        this.cargarCitas(this.user.id);
+      },
+      error: (err) => {
+        console.log(err)
+      }
+    })
   }
 
-  cargarCitas(){
-    this.citaService.getCitasByPacienteId(this.pacienteId).subscribe(data => {
+  cargarCitas(id:Paciente['id'] | Medico['id']){
+    this.citaService.getCitasByPacienteId(id).subscribe(data => {
       this.citas = data;
+      this.citasCargadas = true;
     })
   }
 }

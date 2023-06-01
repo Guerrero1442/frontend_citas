@@ -10,12 +10,21 @@
     </button>
   </div>
   <div
+    *ngIf="citas.length > 0; else noCitas"
     class="items-stretch grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-4 w-3/4"
   >
     <app-tarjeta-cita
       *ngFor="let cita of citas"
       [cita]="cita"
-      (citaDelete)="cargarCitas()"
+      (citaDelete)="cargarCitas(cita.pacienteId)"
     ></app-tarjeta-cita>
   </div>
+  <ng-template #noCitas>
+    <p
+      *ngIf="citasCargadas"
+      class="text-center text-gray-500 mt-4 border-t border-gray-300 pt-4 font-semibold"
+    >
+      No se encontraron citas.
+    </p>
+  </ng-template>
 </div>

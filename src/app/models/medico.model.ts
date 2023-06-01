@@ -4,7 +4,7 @@ export interface Medico {
   id: number;
   documentoIdentificacion: string;
   nombreCompleto: string;
-  telefono: number;
+  telefono: string;
   especialidad: Especialidad;
   disponibilidad: Date[];
   usuarioId: number;

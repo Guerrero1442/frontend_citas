@@ -28,8 +28,10 @@ export class CitaService {
     return this.http.post<Cita>(`${this.API_URL}/FromDto`, cita);
   }
 
-  updateCita(id: number, cita: Cita): Observable<Cita> {
-    return this.http.put<Cita>(`${this.API_URL}/${id}`, cita);
+
+
+  updateCita(id: number, cita: CrearCitaDTO): Observable<Cita> {
+    return this.http.put<Cita>(`${this.API_URL}/FromDto/${id}`, cita);
   }
 
   deleteCita(id: number): Observable<any> {

@@ -13,6 +13,8 @@ export class LoginComponent {
     password: ['',[Validators.required]]
   })
 
+  loginFailed = false;
+
   constructor(private router: Router, private authService:AuthService, private formBuilder: FormBuilder) {}
 
   doLogin(){
@@ -24,6 +26,7 @@ export class LoginComponent {
           this.router.navigate(['/app'])
         },
         error: (err) => {
+          this.loginFailed = true;
           console.log(err)
         }
       })

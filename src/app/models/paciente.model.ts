@@ -4,8 +4,11 @@ export interface Paciente {
   id: number;
   documentoIdentificacion: string;
   nombreCompleto: string;
-  telefono: number;
+  telefono: string;
   beneficiarios: string[];
   usuarioId: number;
   usuario: User;
+}
+
+export interface CrearPacienteDTO extends Omit<Paciente, 'id' > {
 }
